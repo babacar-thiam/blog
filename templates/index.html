@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for post in object_list %}
+        <div class="card mb-3">
+            <h4 class="card-header"><a href="{% url 'detail' post.pk %}">{{ post.title }}</a></h4>
+
+            <div class="card-body">
+            {{ post.title }}
+            </div>
+        </div>
+    {% empty %}
+    <p>There are no entries for this post yet.</p>
+    {% endfor %}
+{% endblock content %}
